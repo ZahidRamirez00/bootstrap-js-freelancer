@@ -21,6 +21,8 @@ let codiciSconto = ["YHDNU32", "JANJC63", "PWKCN25", "SJDPO96", "POCIE24"];
 
 
 
+
+
 //=========== FUNZIONI =====================================================
 
 function calcoloCostoFinale(event){
@@ -29,6 +31,8 @@ function calcoloCostoFinale(event){
 //-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.--.-.-.-.-.-.-.-.-.-.-.-.
 //Aquisizione del valore dell'elemento select del DOM    
     let inputTypework = document.getElementById("inputTypework2").value;
+
+    let testoPrezzoFinale = document.getElementById("prezzoFinale");
     
     let costoLavoro = 0;
 
@@ -52,16 +56,21 @@ function calcoloCostoFinale(event){
         if(controlloSconto){
             costoLavoro = costoLavoro*0.75;
             console.log("Il prezzo finale scontato è: [" + costoLavoro.toFixed(2) + "€]");
+            testoPrezzoFinale.innerHTML = "Il prezzo finale scontato è: " + costoLavoro.toFixed(2) + "€";
         }else if(inputSconto == ""){
             //costoLavoro = costoTypework * inputOre;
             console.log("Il prezzo finale senza sconto è: [" + costoLavoro + "€]");
+            testoPrezzoFinale.innerHTML = "Il prezzo finale senza sconto è: " + costoLavoro + "€";
         }else if(!controlloSconto){
-            console.log("Il prezzo finale senza sconto è: [" + costoLavoro + "€]")
+            console.log("Hai inserito un codice sbagliato il prezzo finale non sarà scontato: [" + costoLavoro + "€]")
+            testoPrezzoFinale.innerHTML = "Hai inserito un codice sbagliato il prezzo finale non sarà scontato: " + costoLavoro + "€";
         }
         
     }else{
         console.log("ERROR: Hai inserito una parola nelle ore richieste!!!!!!!!")
+        testoPrezzoFinale.innerHTML = "ERROR: Hai inserito una parola nelle ore richieste!!!!!!!!";
     }
+    
 }
 
 
