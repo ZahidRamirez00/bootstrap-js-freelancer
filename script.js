@@ -35,8 +35,8 @@ let richistaLavoro = [
         firstName: document.getElementById("inputFirtname4").value,
         lastName: document.getElementById("inputLastname4").value,
         emailAddress: document.getElementById("inputEmail4").value,
-        oreRichieste: inputOre,
-        tipoDiLavoro: costoTypework[inputTypework-1],
+        oreRichieste: parseInt(document.getElementById("inputHours2").value),
+        valueSelectLavoro: document.getElementById("inputTypework2").value,
         codiceSconto: document.getElementById("inputDiscountcode2").value.toUpperCase(),
         messaggio: document.getElementById("exampleFormMessage1").textContent
     }
