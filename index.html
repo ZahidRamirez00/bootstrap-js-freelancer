@@ -120,7 +120,7 @@
 
             <div class="bg-info">
                 <div class="w-75 mx-auto text-center main">
-                    <form class="row g-3" onsubmit="calcolo" id="anagrafica">
+                    <form class="row g-3" onsubmit="calcoloCostoFinale(event)" id="anagrafica">
                         <div class="col-md-6 text-start">
                             <label for="inputFirtname4" class="form-label">First name</label>
                             <input type="text" class="form-control" id="inputFirtname4" placeholder="Giorgio">
@@ -155,7 +155,7 @@
                                 placeholder="Vorrei commissionare uno sviluppo backend"></textarea>
                         </div>
                         <div class="col">
-                            <button type="button" class="btn btn-warning">Send</button>
+                            <button type="submit" class="btn btn-warning">Send</button>
                         </div>
                     </form>
                     <h5 class="text-start">Il prezzo finale è di: 153.75</h5>
