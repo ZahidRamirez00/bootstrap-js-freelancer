@@ -28,7 +28,21 @@ let codiciSconto = ["YHDNU32", "JANJC63", "PWKCN25", "SJDPO96", "POCIE24"];
 function calcoloCostoFinale(event){
 //Evito che submit il suo evento di Default. Perché voglio io definire il suo comportamento
     event.preventDefault();
-//-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.--.-.-.-.-.-.-.-.-.-.-.-.
+//-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.--.-.-.-.-.-.-.-.-.-.-.-.-
+//Creazione dell'oggetto --- richiestaLavoro ---
+let richistaLavoro = [
+    {
+        firstName: document.getElementById("inputFirtname4").value,
+        lastName: document.getElementById("inputLastname4").value,
+        emailAddress: document.getElementById("inputEmail4").value,
+        oreRichieste: inputOre,
+        tipoDiLavoro: costoTypework[inputTypework-1],
+        codiceSconto: document.getElementById("inputDiscountcode2").value.toUpperCase(),
+        messaggio: document.getElementById("exampleFormMessage1").textContent
+    }
+];
+
+
 //Aquisizione del valore dell'elemento select del DOM    
     let inputTypework = document.getElementById("inputTypework2").value;
 
@@ -70,7 +84,7 @@ function calcoloCostoFinale(event){
         console.log("ERROR: Hai inserito una parola nelle ore richieste!!!!!!!!")
         testoPrezzoFinale.innerHTML = "ERROR: Hai inserito una parola nelle ore richieste!!!!!!!!";
     }
-    
+
 }
 
 
