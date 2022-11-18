@@ -1,0 +1,33 @@
+*{
+    min-width: 280px;
+}
+
+.navbar{
+    padding: 0px;
+    margin-bottom: 8px;
+}
+
+.photo-profilo{
+    width: 200px;
+}
+
+.row{
+    margin-bottom: 90px;
+}
+
+.bg-info{
+    padding-bottom: 12px;
+}
+
+#title_portfolio{
+    margin-top: 12px;
+}
+
+#anagrafica{
+    margin-bottom: 8px;
+}
+
+.bg-dark{
+    padding-bottom: 8px;
+    padding-top: 12px;
+}
