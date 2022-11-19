@@ -1,5 +1,6 @@
 //Creazione degli array con i dati da utilizzare
 let costoTypework = [20.50, 15.30, 33.60];
+let tipologiaLavoro = ["Backend Development","Frontend Development","Project Analisys"];
 //Ricorda che lo sconto da fare in caso il codice inserito sia corretto è del -- 25% -- del prezzo finale
 let codiciSconto = ["YHDNU32", "JANJC63", "PWKCN25", "SJDPO96", "POCIE24"];
 
@@ -37,24 +38,26 @@ let richistaLavoro = [
         emailAddress: document.getElementById("inputEmail4").value,
         oreRichieste: parseInt(document.getElementById("inputHours2").value),
         valueSelectLavoro: document.getElementById("inputTypework2").value,
+        tipoLavoro: "",
         codiceSconto: document.getElementById("inputDiscountcode2").value.toUpperCase(),
-        messaggio: document.getElementById("exampleFormMessage1").textContent
+        messaggio: document.getElementById("exampleFormMessage1").value,
+        prezzoFinale: 0
     }
 ];
 
-
 //Aquisizione del valore dell'elemento select del DOM    
-    let inputTypework = document.getElementById("inputTypework2").value;
+    let inputTypework = richistaLavoro.valueSelectLavoro;
 
     let testoPrezzoFinale = document.getElementById("prezzoFinale");
     
     let costoLavoro = 0;
 
-    let inputOre = parseInt(document.getElementById("inputHours2").value);
+    let inputOre = richistaLavoro.oreRichieste;
 //Controllo
     if(Number.isInteger(inputOre)){
         console.log("Il valore inserito nel select è: [" + inputTypework + "] che equivale a: [" + costoTypework[inputTypework-1] + "€]");
-        let inputSconto = document.getElementById("inputDiscountcode2").value.toUpperCase();
+        richistaLavoro.tipoLavoro = tipologiaLavoro[inputTypework-1];
+        let inputSconto = richistaLavoro.codiceSconto;
         let controlloSconto = false;
         console.log("Il codive inserito è: [" + inputSconto + "]");
     //Controllo del Codice Sconto
@@ -84,7 +87,23 @@ let richistaLavoro = [
         console.log("ERROR: Hai inserito una parola nelle ore richieste!!!!!!!!")
         testoPrezzoFinale.innerHTML = "ERROR: Hai inserito una parola nelle ore richieste!!!!!!!!";
     }
+    richistaLavoro.prezzoFinale = costoLavoro;
 
+    richistaLavoro.forEach((element) => {
+        console.log(`
+            ================= Richiesta di Lavoro ==================
+            
+            Nome: ${element.firstName}
+            Cognome: ${element.lastName}
+            Email Address: ${element.emailAddress}
+            Ore richieste: ${element.oreRichieste}
+            Tipo del lavoro: ${element.tipologiaLavoro}
+            Codice sconto: ${element.codiceSconto}
+            Messaggio: ${element.messaggio}
+    
+            ========================================================
+        `)
+    });
 }
 
 
